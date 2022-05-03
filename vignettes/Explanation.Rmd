@@ -1,0 +1,54 @@
+---
+title: "What the package does"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{What the package does}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753R)
+```
+
+# Introduction
+This package contains four useful functions concerning statistics in R. The first of which is a simple, read function where given any dat aset, a table consisting of whatever values were contained within the csv is then able to be displayed/manipulated into more useful representations of the data set. The second function is for if one would like to create a histogram from a scatter plot. Given the independent variable, dependent variable, and labels for both variables, we can create a "stacked" scatter plot and histogram representation of the data set. The third function allows the user to find the quadratic function in the case that one would like to produce a quadratic trend line for a given data set. The fourth and final function is a function in which the user is able to analyze a t-test plot for a given data set. Providing this function a data set as well as some information regarding the data set to help the function, this function will produce a plot consisting iof several values for which are relevant to a t-test. This function used in conjunction with another population allows the user to make much more accurate and direct comparisons between the two.
+
+## The First Function
+The first function is a simple read-type function in which the user is asked for nothing but the file name for the desired data set to be represented and so long as the file is contained in the appropriate directory, the user will be able to work with the data set after the function call.
+```{r}
+data <- myread("SHALLOW.csv")
+```
+
+
+## The Second Function
+This function allows the user to produce an information scatter plot to derive useful information from
+
+```{r}
+scatterhist(data$Actual, data$Predict, "actual", "predict")
+```
+
+
+## The Third Function
+This function allows one to produce a table for a given data set to be used in the future
+
+```{r}
+mytab(data$Actual, data$Predict)
+```
+
+
+## The Fourth Function
+The fourth and final function allows to user to simulate a plot for a t_test and analyze the results thereafter
+
+```{r}
+# default values
+myTsim()
+```
+
